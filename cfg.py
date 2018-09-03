@@ -32,7 +32,7 @@ else:
 steps_per_epoch = total_img * (1 - validation_split_ratio) // batch_size
 validation_steps = total_img * validation_split_ratio // batch_size
 
-data_dir = '/Users/xingoo/PycharmProjects/AdvancedEAST/data/msra'
+data_dir = '/data1/ocr/msra'
 origin_image_dir_name = 'image/'
 origin_txt_dir_name = 'txt/'
 train_image_dir_name = 'images_%s/' % train_task_id
