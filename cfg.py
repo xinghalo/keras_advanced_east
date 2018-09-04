@@ -1,7 +1,7 @@
 import os
 
 # train_task_id = '3T256'
-train_task_id = '1000'
+train_task_id = '1T256'
 initial_epoch = 0
 epoch_num = 24
 lr = 1e-3
@@ -17,8 +17,8 @@ total_img = 10000
 validation_split_ratio = 0.1
 # max_train_img_size = int(train_task_id[-3:])
 # max_predict_img_size = int(train_task_id[-3:])  # 2400
-max_train_img_size = 736
-max_predict_img_size = 736  # 2400
+max_train_img_size = int(train_task_id[-3:])
+max_predict_img_size = int(train_task_id[-3:])  # 2400
 assert max_train_img_size in [256, 384, 512, 640, 736], \
     'max_train_img_size must in [256, 384, 512, 640, 736]'
 if max_train_img_size == 256:
@@ -35,15 +35,15 @@ validation_steps = total_img * validation_split_ratio // batch_size
 data_dir = '/data1/ocr/msra'
 origin_image_dir_name = 'image/'
 origin_txt_dir_name = 'txt/'
-train_image_dir_name = 'images_%s/' % train_task_id
-train_label_dir_name = 'labels_%s/' % train_task_id
-show_gt_image_dir_name = 'show_gt_images_%s/' % train_task_id
-show_act_image_dir_name = 'show_act_images_%s/' % train_task_id
+train_image_dir_name = 'images_1000/'
+train_label_dir_name = 'labels_1000/'
+show_gt_image_dir_name = 'show_gt_images_1000/'
+show_act_image_dir_name = 'show_act_images_1000/'
 gen_origin_img = True
 draw_gt_quad = True
 draw_act_quad = True
-val_fname = 'val_%s.txt' % train_task_id
-train_fname = 'train_%s.txt' % train_task_id
+val_fname = 'val_1000.txt'
+train_fname = 'train_1000.txt'
 # in paper it's 0.3, maybe to large to this problem
 shrink_ratio = 0.2
 # pixels between 0.2 and 0.6 are side pixels

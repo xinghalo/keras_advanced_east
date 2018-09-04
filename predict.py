@@ -174,7 +174,7 @@ def predict_txt(east_detect, img_path, txt_path, pixel_threshold, quiet=False):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--path', '-p',
-                        default='demo/124.jpg',
+                        default='demo/IMG_0059.JPG',
                         help='image path')
     parser.add_argument('--threshold', '-t',
                         default=0.5,
